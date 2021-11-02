@@ -1,48 +1,19 @@
-﻿{
-  "version": 2,
-  "configurePresets": [
-    {
-      "name": "linux-default",
-      "displayName": "Linux Debug",
-      "description": "Target the Windows Subsystem for Linux (WSL) or a remote Linux system.",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/out/build/${presetName}",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
-      },
-      "vendor": {
-        "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Linux" ] },
-        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": { "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}" }
-      }
-    },
-    {
-      "name": "windows-x86",
-      "displayName": "Windows x86 Debug",
-      "description": "Target Windows with the Visual Studio development environment.",
-      "generator": "Visual Studio 16 2019",
-      "binaryDir": "${sourceDir}/out/build/${presetName}",
-      "architecture": {
-        "value": "win32",
-        "strategy": "external"
-      },
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
-      },
-      "vendor": { "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Windows" ] } }
-    }
-  ],
-  "buildPresets": [
-    {
-      "name": "build-x86",
-      "configurePreset": "windows-x86",
-      "cleanFirst": true,
-      "verbose": true,
-      "configuration": "Debug",
-      "jobs": 4,
-      "displayName": "Build for Windows x86 (32-bit)"
-
-    }
-  ]
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "msvc-x86",
+            "displayName": "Visual Studio Community 2019 Release - x86",
+            "description": "Using compilers for Visual Studio 16 2019 (x86 architecture)",
+            "generator": "Visual Studio 16 2019",
+            "toolset": "host=x86",
+            "architecture": "win32",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_TOOLCHAIN_FILE": "C:/Users/smzb_code/Source/repos/apps/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            }
+        }
+    ]
 }
