@@ -133,7 +133,7 @@ _deps
 .vs/
 .cache/
 out/
-**/bin/
-!**/.gitkeep
-!**/README.md
+*/bin/
+!*/.gitkeep
+!*/README.md
 build/**
