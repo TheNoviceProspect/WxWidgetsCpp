@@ -135,4 +135,5 @@ _deps
 out/
 **/bin/
 !**/.gitkeep
+!**/README.md
 build/**
