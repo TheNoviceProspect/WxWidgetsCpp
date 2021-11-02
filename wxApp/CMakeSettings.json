@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "name": "x86-Debug",
+      "generator": "Visual Studio 16 2019",
+      "configurationType": "Debug",
+      //"buildRoot": "${env.LOCALAPPDATA}\\CMakeBuild\\${workspaceHash}\\build\\${name}",
+      "cmakeCommandArgs": "-DCMAKE_TOOLCHAIN_FILE='C:\\Users\\smzb_code\\Source\\repos\\apps\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake'",
+      "buildCommandArgs": "-m -v:normal",
+      "variables": [
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "C:\\Users\\smzb_code\\Source\\repos\\apps\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+        }
+      ]
+    }
+  ]
+}
