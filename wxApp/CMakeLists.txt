@@ -37,7 +37,12 @@ set(HEADERS
     "include/main.hpp"
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES_CXX_FILES} ${HEADERS})
+if(UNIX)
+    add_executable(${PROJECT_NAME} ${SOURCES_CXX_FILES} ${HEADERS})
+elseif(WIN32)
+    add_executable(${PROJECT_NAME} WIN32 ${SOURCES_CXX_FILES} ${HEADERS})
+endif()
+
 include_directories(${CMAKE_BINARY_DIR}/dist/include)
 target_include_directories(${PROJECT_NAME} PRIVATE ${wxWidgets_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${wxWidgets_LIBRARIES})
