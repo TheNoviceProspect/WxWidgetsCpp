@@ -41,5 +41,23 @@
                 "CMAKE_CXX_COMPILER": "/bin/x86_64-linux-gnu-g++-9"
             }
         }
+    ],
+    "buildPresets": [
+        {
+            "name": "Debug-win32",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "msvc-x86",
+            "cleanFirst": true,
+            "jobs": 4
+        },
+        {
+            "name": "Debug-linux",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "linux-x64",
+            "cleanFirst": true,
+            "jobs": 4
+        }
     ]
 }

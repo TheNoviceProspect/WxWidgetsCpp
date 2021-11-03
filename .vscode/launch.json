@@ -1,6 +1,16 @@
 {
     "configurations": [
-
+        {
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/wxApp/bin/Debug/wxApp.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
         {
             "name": "(gdb) Launch",
             "type": "cppdbg",
@@ -19,21 +29,6 @@
                     "ignoreFailures": true
                 }
             ]
-        },
-    {
-        "name": "(gdb) Attach",
-        "type": "cppdbg",
-        "request": "attach",
-        "program": "${workspaceFolder}/wxApp/bin/wxApp",
-        "processId": "${command:pickProcess}",
-        "MIMode": "gdb",
-        "setupCommands": [
-            {
-                "description": "Enable pretty-printing for gdb",
-                "text": "-enable-pretty-printing",
-                "ignoreFailures": true
-            }
-        ]
-    }
+        }
     ]
 }
