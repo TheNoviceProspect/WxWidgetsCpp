@@ -37,9 +37,9 @@ set(HEADERS
     "include/main.hpp"
 )
 
-if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+if(UNIX)
     add_executable(${PROJECT_NAME} ${SOURCES_CXX_FILES} ${HEADERS})
-elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+elseif(WIN32)
     add_executable(${PROJECT_NAME} WIN32 ${SOURCES_CXX_FILES} ${HEADERS})
 endif()
 
