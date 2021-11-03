@@ -1,24 +1,24 @@
 {
     "version": 2,
     "configurePresets": [
-      {
-        "name": "msvc-x86",
-        "displayName": "Visual Studio Community 2019 Release - x86",
-        "description": "Using compilers for Visual Studio 16 2019 (x86 architecture)",
-        "generator": "Visual Studio 16 2019",
-        "toolset": "host=x86",
-        "architecture": "win32",
-        "binaryDir": "${sourceDir}/out/build/${presetName}",
-        "cacheVariables": {
-          "CMAKE_BUILD_TYPE": "Debug",
-          "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-          "CMAKE_TOOLCHAIN_FILE": "C:/Users/smzb_code/Source/repos/apps/vcpkg/scripts/buildsystems/vcpkg.cmake"
-        }
-      },
+        {
+            "name": "msvc-x86",
+            "displayName": "Visual Studio Community 2019 Release - x86",
+            "description": "Using compilers for Visual Studio 16 2019 (x86 architecture)",
+            "generator": "Visual Studio 16 2019",
+            "toolset": "host=x86",
+            "architecture": "win32",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_TOOLCHAIN_FILE": "C:/Users/smzb_code/Source/repos/apps/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
         {
             "name": "rpi-arm32",
             "displayName": "GCC 8.3.0 arm-linux-gnueabihf",
-          "description": "Using compilers: C = /bin/gcc-8, CXX = /bin/g++-8",
+            "description": "Using compilers: C = /bin/gcc-8, CXX = /bin/g++-8",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
@@ -26,7 +26,19 @@
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "CMAKE_C_COMPILER": "/bin/gcc-8",
                 "CMAKE_CXX_COMPILER": "/bin/g++-8"
-                //"CMAKE_TOOLCHAIN_FILE": "C:/Users/smzb_code/Source/repos/apps/vcpkg/scripts/buildsystems/vcpkg.cmake
+            }
+        },
+        {
+            "name": "linux-x64",
+            "displayName": "GCC 9.3.0 x86_64-linux-gnu",
+            "description": "Using compilers: C = /bin/x86_64-linux-gnu-gcc-9, CXX = /bin/x86_64-linux-gnu-g++-9",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "/bin/x86_64-linux-gnu-gcc-9",
+                "CMAKE_CXX_COMPILER": "/bin/x86_64-linux-gnu-g++-9"
             }
         }
     ]
